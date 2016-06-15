@@ -1,0 +1,50 @@
+CREATE TABLE people
+    (
+      Firstname VARCHAR(255),
+      Lastname VARCHAR(255),
+      age int,
+      P_id int NOT NULL,
+      PRIMARY KEY (P_id)
+    );
+
+INSERT INTO people (Firstname, Lastname, age, P_id)
+  VALUES ('Aaron', 'Bini', 33, 1);
+
+INSERT INTO people (Firstname, Lastname, age, P_id)
+  VALUES ('Jon', 'Doe', 45, 2);
+
+SELECT * FROM [people]
+  ORDER BY Firstname desc;
+
+SELECT * FROM people
+  WHERE age > 40;
+
+SELECT * FROM [people]
+  ORDER BY Lastname DESC,age ASC;
+
+SELECT * FROM [Customers]
+  WHERE Country = 'Spain'
+  AND City = ‘Madrid';
+
+SELECT SupplierName, ContactName FROM [Suppliers]
+  WHERE City = 'Osaka'
+  OR City = ‘Tokyo';
+
+SELECT SupplierName, ContactName, Phone FROM [Suppliers]
+  WHERE Country LIKE ‘U%';
+
+UPDATE Customers
+  SET CustomerName = 'ACB Farms', ContactName = 'Aaron Bini'
+  WHERE Country = 'Mexico';
+
+SELECT * FROM [OrderDetails]
+  WHERE Quantity < 10;
+
+SELECT COUNT (CustomerID) FROM Orders
+  WHERE CustomerID = 84;
+
+SELECT COUNT (CustomerID) FROM Orders
+  WHERE CustomerID = 5;
+
+DELETE FROM people
+  WHERE Lastname = ‘Doe';
